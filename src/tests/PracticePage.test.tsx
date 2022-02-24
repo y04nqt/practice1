@@ -8,12 +8,12 @@ test('render practice page', () => {
 
 test('render practice page and check button is disabled', () => {
   render(<PracticePage />);
-  expect(screen.getByRole('button')).not.toBeDisabled();
+  expect(screen.getByTestId('PracticePageBtn')).not.toBeDisabled();
 })
 
 test('render practicepage and click button to update state', () => {
   render(<PracticePage />);
-  const button = screen.getByRole('button');
+  const button = screen.getByTestId('PracticeComponentBtn');
   button.click();
-  expect(screen.getByText('Practice Page Updated')).toBeInTheDocument();
+  expect(screen.getByText('Practice Page Updated From Child')).toBeInTheDocument();
 })
